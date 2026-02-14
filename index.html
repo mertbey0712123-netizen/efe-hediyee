@@ -29,18 +29,22 @@ body {
 }
 
 @keyframes twinkle {
-    from {opacity: 0.2;}
+    from {opacity: 0.3;}
     to {opacity: 1;}
 }
 
 .card {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.08);
     padding: 40px;
     border-radius: 25px;
     backdrop-filter: blur(8px);
-    box-shadow: 0 0 30px rgba(255,255,255,0.2);
+    box-shadow: 0 0 30px rgba(255,255,255,0.15);
     max-width: 520px;
     z-index: 2;
+}
+
+h1 {
+    text-shadow: 0 0 10px rgba(255,255,255,0.6);
 }
 
 button {
@@ -64,6 +68,12 @@ button:hover {
     margin-top: 20px;
 }
 
+.footer {
+    margin-top: 25px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
 .fadeIn {
     animation: fade 2s forwards;
 }
@@ -72,7 +82,6 @@ button:hover {
     from {opacity: 0;}
     to {opacity: 1;}
 }
-
 </style>
 </head>
 <body>
@@ -106,6 +115,11 @@ button:hover {
 
         En sevdiğim aşkım Rabiam <3
         </p>
+
+        <div class="footer">
+            14 Şubat 2026 ❤️ <br>
+            Bu site Rabia için özel kodlandı.
+        </div>
     </div>
 </div>
 
@@ -116,60 +130,4 @@ for(let i=0;i<150;i++){
     star.className="star";
     star.style.top=Math.random()*100+"vh";
     star.style.left=Math.random()*100+"vw";
-    star.style.animationDuration=(Math.random()*3+1)+"s";
-    document.body.appendChild(star);
-}
-
-// Geri sayım
-function startCountdown(){
-    let count=3;
-    let text=document.getElementById("countdownText");
-    text.innerHTML=count;
-
-    let interval=setInterval(()=>{
-        count--;
-        if(count>0){
-            text.innerHTML=count;
-        }else{
-            clearInterval(interval);
-            document.getElementById("intro").style.display="none";
-            document.getElementById("poem").style.display="block";
-            typeEffect();
-        }
-    },1000);
-}
-
-// Yazı yazılma efekti
-let message=`Hayat bazen karanlık bir gece gibi olabilir...
-
-Ama sen çıktığında yıldızlar çoğalıyor.
-
-Kalbim bazen susar,
-Ama seni düşündüğümde hep konuşur.
-
-Bu sadece bir sayfa değil,
-Sana hissettiklerimin küçük bir yansıması.
-
-İyi ki varsın Rabia.`;
-
-let i=0;
-function typeEffect(){
-    if(i<message.length){
-        document.getElementById("typing").innerHTML+=message.charAt(i);
-        i++;
-        setTimeout(typeEffect,40);
-    }else{
-        document.getElementById("finalButton").style.display="block";
-    }
-}
-
-// Özel mesaj açma
-function showMessage(){
-    let msg=document.getElementById("specialMessage");
-    msg.style.display="block";
-    msg.classList.add("fadeIn");
-}
-</script>
-
-</body>
-</html>
+    star.style.animationDuration=(Math.random()*3+1*
